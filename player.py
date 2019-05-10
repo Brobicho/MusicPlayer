@@ -1,15 +1,16 @@
 from tkinter import *
 import os
+import ntpath
 import tkinter.messagebox
 import tkinter.filedialog
 
 def Ouvrir():
-    file = tkinter.filedialog.askopenfilename(title="Ouvrir un fichier",filetypes=[('audio files','.mp3', '.mp4', '.wav', '.flac', '.wma'),('all files','.*')])
-    filename, file_extension = os.path.splitext(file)
-    print(file)
+    file = tkinter.filedialog.askopenfilename(title="Ouvrir un fichier",filetypes=[('audio files', '.mp3'),('audio files', '.wav'),('audio files', '.flac'),('audio files', '.ogg'),('audio files', '.mp4'),('all files','.*')])
+    #filename, file_extension = os.path.splitext(file)
+    filename = ntpath.basename(file)
+    filename, extension = os.path.splitext(filename)
     print(filename)
-    print(file_extension)
-    #window.title("SMP - " + str(photo.width()) + " x " + str(photo.height()))
+    window.title("SMP - " + filename)
 
 def Fermer():
     window.title("SMP")
