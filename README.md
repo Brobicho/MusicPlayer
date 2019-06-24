@@ -1,4 +1,4 @@
 # MusicPlayer
 Simple Music Player
 
-Currently playing sounds in the pygame sound engine.
+Currently playing audio through the pygame sound engine.
